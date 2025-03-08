@@ -1,0 +1,573 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #969696, #ffffff, hsl(0, 0%, 76%));
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+header {
+  background: linear-gradient(135deg, #67a5f739, #57a4f700);
+  color: rgb(255, 255, 255);
+  padding: 1.5rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+#about p {
+  margin: 0;
+  font-size: 1.7rem;
+  text-align: left;
+}
+#about h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  text-align: left;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+nav a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.section {
+margin-top: 2rem;
+margin-bottom: 2rem;
+padding: 1.5rem;
+}
+
+.section-about {
+background: rgba(198, 195, 195, 0);
+}
+
+.section-projects {
+background: rgb(0, 0, 0);
+}
+
+.section-contact {
+background: rgba(255, 255, 255, 0.5);
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: linear-gradient(135deg, #67a5f7, #57a5f7);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.projects h3,
+.projects p {
+  margin: 0.1 rem 0.1;
+  text-align: bottom;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.5);
+  position: relative; 
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.project-card img {
+  width: 200%;
+  border-radius: 20px;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* 4 columns */
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.logo-card {
+background: rgba(255, 255, 255, 0);
+border: 0.3px solid #46434300;
+border-radius: 0.3px;
+padding: 0.3rem;
+text-align: center;
+cursor: pointer;
+transition: transform 0.3s ease;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.logo-card img {
+  width: 100%;
+  max-width: 100px; /* Adjust size as needed */
+  height: auto;
+}
+
+.logo-large img {
+max-width: 150px; /* Larger size */
+}
+
+.logo-extralarge img {
+max-width: 300px; /* Larger size */
+}
+
+.logo-card:hover {
+  transform: scale(1.05);
+}
+
+.logo-card.magnified {
+  transform: scale(10); /* Adjust the scale as needed */
+transition: transform 1s ease;
+z-index: 1000; /* Ensure it appears above other elements */
+position: absolute; /* Position it absolutely to avoid layout issues */
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) scale(10);
+}
+
+.logo-card.magnified h3,
+.logo-card.magnified p {
+  position: absolute;
+  bottom: -px; /* Adjust this value to move the text down */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: bottom 1s ease;
+}
+
+.logo-text {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+background: rgba(51, 51, 51, 0.85); /* Overlay color with opacity */
+color: #fff;
+padding: 1rem;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+z-index: 1000;
+background-image: url('path/to/your/image.jpg'); /* Path to your background image */
+background-size: cover;
+background-blend-mode: overlay; /* Blend the image with the overlay color */
+}
+
+.logo-text h3 {
+margin-top: 0;
+font-size: 1.5rem;
+color: #ebebeb;
+}
+
+.logo-text h4 {
+margin-top: 0.5rem;
+font-size: 1.2rem;
+color: #cacaca;
+}
+
+.logo-text p {
+margin-top: 0.5rem;
+font-size: 1rem;
+color: #f5f5f5;
+
+}
+
+.logo-card:hover .logo-text {
+display: block;
+}
+
+.logo-card.magnified {
+transform: scale(1.5); /* Adjust the scale as needed */
+transition: transform 0.3s ease;
+}
+
+.language-selector-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.language-selector-container img {
+  width: 30px; /* Adjust size as needed */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition for smooth effect */
+}
+
+.language-selector-container img:hover {
+transform: scale(1.1); /* Slightly enlarge the flag */
+opacity: 0.8; /* Slightly fade the flag */
+}
+
+footer {
+  text-align: center;
+  background: linear-gradient(135deg, #67a5f73b, #57a4f70b);
+  color: rgb(0, 0, 0);
+  padding: 1.5rem 0;
+  width: 100%;
+}
+
+footer a {
+  color: #fad0c4;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.logo-description {
+  text-align: center;
+  margin-top: 0rem;
+}
+
+.logo-description .logo {
+  max-width: 300px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: -6rem;
+}
+
+.logo-description .description {
+  font-size: rem;
+  color: #333;
+}
+
+.water-effect {
+  display: inline-block;
+  font-size: 2rem; /* Adjust the font size as needed */
+  font-weight: normal;
+  background: linear-gradient(90deg, rgb(34, 34, 54), rgb(37, 81, 42), rgb(36, 36, 173));
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: background-position 0.5s ease-in-out;
+}
+
+.water-effect:hover {
+  background-position: 100% 0;
+}
+
+.gradient-effect {
+  display: inline-block;
+  font-size: 2rem; /* Adjust the font size as needed */
+  font-weight: normal;
+  background: linear-gradient(90deg, #e70000, #f76b00, #e1d6d6);
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: background-position 0.5s ease-in-out;
+}
+.gradient-effect:hover {
+  background-position: 100% 0;
+}
+
+/* Add this to your fabian.css file */
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .container {
+      width: 100%;
+      padding: 0 1rem;
+  }
+
+  .logo-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .logo-card {
+      width: 100%;
+      margin-bottom: 1rem;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+      width: 90%;
+      padding: 0 2rem;
+  }
+
+  .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+  }
+
+  .logo-card {
+      width: 100%;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .container {
+      width: 80%;
+      padding: 0 3rem;
+  }
+
+  .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 1rem;
+  }
+
+  .logo-card {
+      width: 100%;
+  }
+}
+
+#copywriting-portfolio {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#copywriting-portfolio .container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.portfolio-link {
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.portfolio-link:hover {
+  color: #ff7e5f; /* Change color on hover */
+}
+
+.section-about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f0f0f0, #ffffff);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.profile-background {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: url('images/background.jpeg') no-repeat center center;
+  background-size: cover;
+  border-radius: 10px;
+  margin-right: 2rem;
+}
+.profile-picture {
+  flex: 0 0 auto;
+  margin-right: 2rem;
+}
+
+.profile-picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* About Content */
+.about-content {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left; /* Align text to the left */
+  z-index: 1;
+  position: relative;
+}
+
+.about-content h2 {
+  margin: 10px 0 5px;
+  font-size: 24px;
+  text-align: left; /* Ensure text is aligned to the left */
+}
+
+.about-content p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.about-description {
+  color: #666;
+}
+
+.about-image img {
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+}
+
+/* About Section */
+.section-about {
+  position: relative;
+  text-align: center;
+  padding-top: 100px; /* Space for profile picture */
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f0f0f0, #ffffff);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);; /* Space for profile picture */
+}
+
+/* Profile Picture */
+.profile-picture {
+  position: relative;
+  z-index: 1; /* Ensures it's above the background */
+  display: flex;
+  justify-content: left;
+  margin-top: px;/* Background Banner (Behind Profile Picture) */
+}
+
+.background-banner {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px; /* Adjust width */
+  height: 150px; /* Adjust height */
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 10px; /* Round top-left corner */
+  border-top-right-radius: 10px; /* Round top-right corner */
+  z-index: 0; /* Ensures it stays behind */
+  opacity: 0;
+  transition: opacity 0.65s ease-in-out;
+}
+
+.background-banner.fade-in {
+  opacity: 1;
+}
+   /* Moves it up slightly into the background */
+
+
+.profile-picture img {
+  width: 120px; /* Adjust as needed */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgb(255, 255, 255); /* Creates LinkedIn-like separation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+.profile-picture img:hover {
+  transform: scale(1.1); /* Slightly enlarge the picture */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a larger shadow */
+}
+
+/* About Content */
+.about-content {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.about-content h2 {
+  margin: 10px 0 5px;
+  font-size: 24px;
+  text-align: left;
+}
+
+.about-content p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #0077B5; /* LinkedIn Blue */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #005a8c;
+}
+
+.profile-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  max-width: 600px;
+  text-align: left;
+  margin-top: 0.5rem;
+  margin-left: 0rem;
+}
+
+.mini-logo {
+  position: absolute;
+  top: 150px;
+  right: 10px;
+}
+
+.mini-logo img {
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.mini-logo img:hover {
+  transform: rotate(360deg); /* Rotate the logo */
+  opacity: 0.8; /* Slightly fade the logo */
+}

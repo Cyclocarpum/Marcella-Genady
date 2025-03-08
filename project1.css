@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #ffffff, #fefefe, hsl(0, 0%, 100%));
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    max-width: 1000px;
+    text-align: center;
+    margin: 3.5rem auto;
+}
+
+.image-container img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease-out;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+header {
+    background: linear-gradient(135deg, #67a5f71a, #57a4f700);
+    color: rgb(0, 0, 0);
+    padding: 1.5rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    background: linear-gradient(135deg, #67a5f71c, #57a4f70b);
+    color: rgb(0, 0, 0);
+    padding: 1.5rem 0;
+    width: 100%;
+}
+
+footer a {
+    color: #fad0c4;
+    text-decoration: none;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #67a5f7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+/* Add this to your fabian.css file */
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .logo-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-card {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        width: 90%;
+        padding: 0 2rem;
+    }
+
+    .logo-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .logo-card {
+        width: 100%;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+    .container {
+        width: 80%;
+        padding: 0 3rem;
+    }
+
+    .logo-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    .logo-card {
+        width: 100%;
+    }
+}
