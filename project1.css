@@ -123,3 +123,23 @@ footer a {
         width: 100%;
     }
 }
+
+.language-selector-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .language-selector-container img {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition for smooth effect */
+  }
+  
+  .language-selector-container img:hover {
+  transform: scale(1.1); /* Slightly enlarge the flag */
+  opacity: 0.8; /* Slightly fade the flag */
+  }
