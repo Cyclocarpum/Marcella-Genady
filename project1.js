@@ -27,22 +27,3 @@ function translatePage(language) {
         }
     });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const urlLang = params.get("lang");
-
-    // If there's a language in the URL, use it and update localStorage
-    if (urlLang) {
-        localStorage.setItem("selectedLanguage", urlLang);
-    }
-
-    // Get the language to use (from URL if present, otherwise from localStorage, default to English)
-    const savedLanguage = urlLang || localStorage.getItem("selectedLanguage") || "en";
-
-    // Set the document language
-    document.documentElement.lang = savedLanguage;
-
-    // Apply translation
-    translatePage(savedLanguage);
-});

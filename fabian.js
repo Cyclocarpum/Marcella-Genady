@@ -47,12 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.documentElement.lang = savedLanguage;
     translatePage(savedLanguage);
 
-    // Update all links to carry the ?lang=XX parameter
-    document.querySelectorAll("a").forEach((link) => {
-        const href = new URL(link.href, window.location.href);
-        href.searchParams.set("lang", savedLanguage);
-        link.href = href.toString();
-    });
+  
 });
 
 // Function to translate page content
@@ -63,12 +58,4 @@ function translatePage(language) {
             element.textContent = translation;
         }
     });
-}
-
-// Function to change language and redirect
-function changeLanguage(language) {
-    localStorage.setItem("selectedLanguage", language);
-    const newUrl = new URL(window.location.href);
-    newUrl.searchParams.set("lang", language);
-    window.location.href = newUrl.toString();
 }
