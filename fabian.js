@@ -4,12 +4,15 @@
 
     function toggleText(id) {
         const textElement = document.getElementById(id);
-        if (textElement.style.display === 'none' || textElement.style.display === '') {
-            textElement.style.display = 'block';
+        if (textElement.style.opacity === "0" || textElement.style.opacity === "") {
+            textElement.style.opacity = "1";
+            textElement.style.pointerEvents = "auto";
         } else {
-            textElement.style.display = 'none';
+            textElement.style.opacity = "0";
+            textElement.style.pointerEvents = "none";
         }
     }
+    
     function toggleMagnify(event) {
         event.currentTarget.classList.toggle('magnified');
     }
