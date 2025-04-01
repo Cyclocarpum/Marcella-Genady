@@ -307,29 +307,46 @@ footer a:hover {
 /* Mobile Styles */
 @media (max-width: 600px) {
   .container {
-      width: 100%;
-      padding: 0 1rem;
+    width: 100%;
+    padding: 0 1rem;
   }
 
   .logo-grid {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .logo-card {
     width: 100%;
     margin-bottom: 1rem;
     position: relative; /* Ensure the text is positioned relative to the card */
-}
+  }
 
-.logo-text {
-    position: relative;
+  .logo-card img {
+    width: 100%; /* Ensure the logo image fits within the card */
+    height: auto;
+  }
+
+  .logo-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
     opacity: 0; /* Initially hidden */
+    background: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background for better readability */
+    color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
     transition: opacity 0.3s ease-in-out;
     pointer-events: none; /* Prevent interaction when hidden */
-}
+    z-index: 10; /* Ensure it appears above the logo */
+  }
 
+  .logo-card:hover .logo-text {
+    opacity: 1; /* Show text on hover */
+  }
 }
 
 /* Tablet Styles */
