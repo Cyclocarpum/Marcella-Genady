@@ -318,9 +318,21 @@ footer a:hover {
   }
 
   .logo-card {
-      width: 100%;
-      margin-bottom: 1rem;
-  }
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative; /* Ensure the text is positioned relative to the card */
+}
+
+.logo-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
 }
 
 /* Tablet Styles */
