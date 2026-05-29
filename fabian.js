@@ -59,3 +59,37 @@ function translatePage(language) {
         }
     });
 }
+
+// Scroll Animation for Experience Items
+document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all experience items
+    document.querySelectorAll('.experience-item').forEach(item => {
+        observer.observe(item);
+    });
+});
+
+// Fade-in on page load: auto-apply to main layout blocks and stagger
+document.addEventListener('DOMContentLoaded', function() {
+    // Auto-apply to common top-level blocks; adjust selector as needed
+    const autoTargets = document.querySelectorAll('header, section, footer, .project-card, .logo-card, .experience-item, #copywriting-portfolio, .section-about');
+    autoTargets.forEach(el => el.classList.add('fade-on-load'));
+
+    const elems = document.querySelectorAll('.fade-on-load');
+    elems.forEach((el, i) => {
+        const delay = el.dataset.fadeDelay ? parseInt(el.dataset.fadeDelay, 10) : i * 80;
+        setTimeout(() => el.classList.add('visible'), delay);
+    });
+});
