@@ -742,8 +742,24 @@ header {
   padding: 1.75rem 1rem;
 }
 
+#copywriting-portfolio .container {
+  display: flex;
+  justify-content: center;
+}
+
 .portfolio-link {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
   font-size: 1.2rem;
+  padding: 0;
+}
+
+.portfolio-link a {
+  display: inline-block;
+  max-width: 100%;
+  width: auto;
 }
 
 footer {
@@ -837,8 +853,28 @@ footer {
 .sidebar-links a:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
 
 @media (max-width: 768px) {
-  .experience-section .container { display: block; }
-  .experience-sidebar { width: 100%; margin-top: 1rem; }
+  .experience-section .container {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .experience-list {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  .experience-sidebar {
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem auto 0;
+    padding: 1rem;
+    flex: none;
+    align-self: stretch;
+  }
+  .experience-sidebar h3 {
+    text-align: center;
+  }
 }
 
 /* Progressive color for each experience item: top (light) → bottom (deep blue) */
