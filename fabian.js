@@ -67,18 +67,23 @@ document.addEventListener("DOMContentLoaded", function() {
         rootMargin: '0px 0px -50px 0px'
     };
 
+    const items = Array.from(document.querySelectorAll('.experience-item'));
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
+                const index = items.indexOf(entry.target);
+                const delay = index >= 0 ? index * 120 : 0;
+                setTimeout(() => {
+                    entry.target.classList.add('fade-in');
+                }, delay);
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe all experience items
-    document.querySelectorAll('.experience-item').forEach(item => {
-        observer.observe(item);
-    });
+    // Observe all experience items with an index-based stagger delay
+    items.forEach(item => observer.observe(item));
 });
 
 // Fade-in on page load: auto-apply to main layout blocks and stagger

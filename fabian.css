@@ -936,6 +936,12 @@ footer {
   width: 100%;
 }
 
+.experience-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 480ms ease, transform 480ms ease;
+}
+
 .experience-item.fade-in {
   opacity: 1;
   transform: translateY(0);
