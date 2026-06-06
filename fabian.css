@@ -1051,8 +1051,15 @@ footer a:hover {
 .insta-link:hover { transform: translateY(-3px); box-shadow: 0 14px 38px rgba(0,0,0,0.18); }
 
 @media (max-width: 768px) {
-  .insta-link { top: 8px; right: 8px; padding: 0.6rem 0.75rem; }
-  .insta-link img { width:16px; height:16px; }
+  .insta-link { bottom: 10px; right: 10px; padding: 0.6rem 0.65rem; }
+  .insta-link img { width:16px; height:16px; margin-bottom: 0.25rem; }
+  .insta-link .insta-caption { font-size: 0.55rem; }
+}
+
+@media (max-width: 480px) {
+  .insta-link { bottom: 8px; right: 8px; padding: 0.5rem 0.55rem; }
+  .insta-link img { width:14px; height:14px; margin-bottom: 0.2rem; }
+  .insta-link .insta-caption { font-size: 0.5rem; letter-spacing: 0.02em; }
 }
 
 /* Hover zoom for logos in experience list */
@@ -1131,6 +1138,33 @@ footer a:hover {
   .experience-item {
     padding: 1.5rem;
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-header {
+    gap: 0.75rem;
+  }
+
+  .company-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .company-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .company-info h4 {
+    font-size: 0.9rem;
+  }
+
+  .experience-item {
+    padding: 1.2rem;
+  }
+
+  .experience-details {
+    font-size: 0.95rem;
   }
 }
 
