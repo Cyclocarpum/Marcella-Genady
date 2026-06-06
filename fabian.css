@@ -430,6 +430,18 @@ opacity: 0.8; /* Slightly fade the flag */
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
+
+  .portfolio-grid:has(:nth-child(3):last-child) :nth-child(3) {
+    grid-column: auto;
+    justify-self: stretch;
+    max-width: 100%;
+  }
+
+  .portfolio-tile img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
 }
 
 .profile-background {
