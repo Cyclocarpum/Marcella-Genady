@@ -4,15 +4,13 @@ function scrollToTop() {
 
 window.addEventListener('scroll', function() {
     const scrollToTopButton = document.querySelector('.scroll-to-top');
-    const secondImage = document.querySelectorAll('.image-container img')[1];
-    if (secondImage) {
-        const secondImagePosition = secondImage.getBoundingClientRect().top + window.scrollY;
-
-        if (window.scrollY >= secondImagePosition) {
-            scrollToTopButton.style.display = 'block';
-        } else {
-            scrollToTopButton.style.display = 'none';
-        }
+    if (!scrollToTopButton) return;
+    // Show button after user scrolls down 300px (adjust if desired)
+    const threshold = 300;
+    if (window.scrollY >= threshold) {
+        scrollToTopButton.style.display = 'block';
+    } else {
+        scrollToTopButton.style.display = 'none';
     }
 });
 
